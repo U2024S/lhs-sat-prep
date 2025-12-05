@@ -9,66 +9,67 @@
     body {
         margin: 0;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        background: #0f121a; /* Dark Navy Background */
+        background: #0f121a;
         color: #ffffff;
         text-align: center;
     }
 
-    /* CONTAINER FOR IMAGE TO ENSURE SQUARE SHAPE AND CROP */
+    /* IMAGE CONTAINER */
     .image-container {
         width: 100%;
         max-width: 400px;
         height: 400px;
-        margin: -80px auto 0 auto; /* Overlaps card */
+        margin: 40px auto 0 auto;
         overflow: hidden;
         border-radius: 25px;
-        box-shadow: 0 15px 50px rgba(0, 102, 204, 0.6);
-        position: relative;
+        box-shadow: 0 0 50px rgba(0, 102, 204, 0.8), 0 0 10px rgba(255, 255, 255, 0.2);
         transition: transform 0.3s ease, box-shadow 0.3s ease;
-        z-index: 20;
     }
-    
+
     .image-container:hover {
         transform: scale(1.02);
-        box-shadow: 0 20px 60px rgba(0, 102, 204, 0.8);
+        box-shadow: 0 15px 60px rgba(0, 102, 204, 0.9);
     }
 
     .image-container img {
         width: 100%;
         height: 100%;
-        object-fit: cover; 
-        object-position: center; 
+        object-fit: cover;
+        object-position: center;
         filter: brightness(0.95);
     }
 
     /* CARD */
     .card {
         max-width: 700px;
-        margin: 0 auto 50px auto; 
-        background: linear-gradient(180deg, #1a202c, #10141a); 
-        padding: 120px 40px 50px 40px; /* Top padding increased for image overlap */
+        margin: 40px auto 50px auto;
+        background: linear-gradient(180deg, #1a202c, #10141a);
+        padding: 35px 40px;
         border-radius: 25px;
-        box-shadow: 0 20px 50px rgba(0,0,0,0.8), 0 0 0 1px rgba(0, 102, 204, 0.15); 
+        box-shadow: 0 20px 50px rgba(0,0,0,0.8), 0 0 0 1px rgba(0, 102, 204, 0.15);
         position: relative;
         z-index: 10;
     }
 
-    /* H1 TITLE WITH CRISP GRADIENT EFFECT */
+    /* CRISP & GLOWING H1 TITLE */
     h1 {
         font-size: 56px;
         margin-top: 0;
         margin-bottom: 25px;
         font-weight: 900;
-        background: linear-gradient(90deg, 
-            #4c7bff 0%, 
-            #2e5cb8 35%, 
-            #1a2a4b 65%, 
+        background: linear-gradient(90deg,
+            #4c7bff 0%,
+            #2e5cb8 35%,
+            #1a2a4b 65%,
             #4c7bff 100%
         );
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
-        text-shadow: 0 0 4px rgba(76, 123, 255, 0.4); /* subtle glow, no blur */
+        color: transparent;
+        /* Crisp glow using drop-shadow */
+        filter: drop-shadow(0 0 6px rgba(76, 123, 255, 0.6))
+                drop-shadow(0 0 8px rgba(76, 123, 255, 0.4));
     }
 
     p {
@@ -79,35 +80,35 @@
         text-align: left;
     }
 
-    /* Button */
+    /* BUTTON */
     .join-btn {
-        background: linear-gradient(45deg, #4c7bff, #5a85ff); 
+        background: linear-gradient(45deg, #4c7bff, #5a85ff);
         color: white;
         font-size: 24px;
         padding: 16px 36px;
         border-radius: 14px;
         border: none;
         cursor: pointer;
-        transition: 0.3s ease-in-out, transform 0.3s ease;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
         font-weight: bold;
-        box-shadow: 0 10px 30px rgba(76, 123, 255, 0.5); 
+        box-shadow: 0 10px 30px rgba(76, 123, 255, 0.5);
         text-decoration: none;
         display: inline-block;
     }
 
     .join-btn:hover {
         transform: translateY(-6px) scale(1.05);
-        background: linear-gradient(45deg, #5a85ff, #6f95ff); 
+        background: linear-gradient(45deg, #5a85ff, #6f95ff);
         box-shadow: 0 14px 35px rgba(76, 123, 255, 0.8);
     }
-    
-    /* Text content */
+
+    /* TEXT CONTENT */
     .text-content {
         text-align: left;
-        display: block; 
+        display: block;
         margin-top: 15px;
     }
-    
+
     .text-content p {
         margin-top: 0;
         margin-bottom: 12px;
@@ -124,7 +125,7 @@
 
 <div class="card">
     <h1>LHS SAT PREP</h1>
-    
+
     <div class="text-content">
         <p>
             Join the #1 SAT prep community at Longmeadow High School!
@@ -144,7 +145,7 @@
     <a class="join-btn" href="https://discord.gg/DcXwBmRUgv" target="_blank">
         🚀 Join the Discord Server
     </a>
-    
+
 </div>
 
 </body>
