@@ -33,21 +33,21 @@
         transform: scale(1.0);
     }
 
-    /* THE IMAGE ITSELF - ADJUSTED FOR SUBTLE ZOOM/CROP */
+    /* THE IMAGE ITSELF - ZOOMED IN SLIGHTLY (1.01) */
     .image-container img {
         width: 100%;
         height: 100%;
         object-fit: cover; 
         object-position: center; 
         filter: brightness(0.9);
-        
         /* NEW: Zoom in slightly to crop 1-2 pixels off the edge */
         transform: scale(1.01); 
     }
 
-    /* CARD */
+    /* CARD - Now using a subtle vertical gradient */
     .card {
         max-width: 700px;
+        /* Reverted margin to overlap the image */
         margin: -60px auto 50px auto; 
         /* Darker Navy to Black Gradient for depth */
         background: linear-gradient(180deg, #1a202c, #10141a); 
@@ -59,22 +59,22 @@
         z-index: 10;
     }
 
-    /* H1 TITLE WITH SOFTER RAINBOW EFFECT */
+    /* H1 TITLE WITH TRUE RAINBOW EFFECT - HIGHLIGHT LESS BIG */
     h1 {
         font-size: 50px;
         margin-top: 0;
         margin-bottom: 20px;
         font-weight: 900;
         
-        /* 1. Define the true rainbow gradient background with slightly softer colors */
+        /* 1. Define the true rainbow gradient background (Softened colors from last step) */
         background: linear-gradient(90deg, 
-            #ff5555 0%,     /* Softer Red */
-            #ffb857 15%,    /* Softer Orange */
-            #ffff77 30%,    /* Softer Yellow */
-            #55ff55 45%,    /* Softer Green */
-            #5555ff 60%,    /* Softer Blue */
-            #804d9e 75%,    /* Softer Indigo */
-            #ff88ff 100%    /* Softer Violet */
+            #ff5555 0%,     
+            #ffb857 15%,    
+            #ffff77 30%,    
+            #55ff55 45%,    
+            #5555ff 60%,    
+            #804d9e 75%,    
+            #ff88ff 100%    
         );
         
         /* 2. Clip the background to the text shape */
@@ -84,9 +84,9 @@
         /* 3. Make the text transparent */
         color: transparent; 
 
-        /* 4. Reduced glow shadow */
+        /* 4. Sublte blue glow - MADE SMALLER AND SOFTER */
         text-shadow: 
-            0 0 5px rgba(0, 153, 255, 0.2); 
+            0 0 3px rgba(0, 153, 255, 0.15); /* Reduced blur radius and opacity */
     }
 
     p {
