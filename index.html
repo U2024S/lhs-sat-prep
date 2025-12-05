@@ -9,12 +9,12 @@
     body {
         margin: 0;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        background: #0f121a; /* Dark Navy Background */
+        background: #0f121a; /* Dark Navy Background (Kept) */
         color: #ffffff;
         text-align: center;
     }
 
-    /* CONTAINER FOR IMAGE TO ENSURE SQUARE SHAPE AND CROP */
+    /* CONTAINER FOR IMAGE TO ENSURE SQUARE SHAPE AND CROP (Kept) */
     .image-container {
         width: 100%;
         max-width: 400px;
@@ -22,8 +22,8 @@
         margin: 40px auto 0 auto;
         overflow: hidden;
         border-radius: 25px;
-        /* Bright blue shadow for a dynamic look */
-        box-shadow: 0 0 50px rgba(0, 102, 204, 0.8), 0 0 10px rgba(255, 255, 255, 0.2); 
+        /* Flashier Blue Shadow */
+        box-shadow: 0 0 60px rgba(0, 153, 255, 0.9), 0 0 20px rgba(255, 255, 255, 0.3); 
         position: relative;
         transform: scale(0.95);
         transition: transform 0.3s ease;
@@ -33,7 +33,7 @@
         transform: scale(1.0);
     }
 
-    /* THE IMAGE ITSELF */
+    /* THE IMAGE ITSELF (Kept) */
     .image-container img {
         width: 100%;
         height: 100%;
@@ -42,16 +42,16 @@
         filter: brightness(0.9);
     }
 
-    /* CARD - Now using a subtle vertical gradient */
+    /* CARD (Kept) */
     .card {
         max-width: 700px;
         margin: -60px auto 50px auto; 
-        /* Darker Navy to Black Gradient for depth */
+        /* Darker Navy to Black Gradient for depth (Kept) */
         background: linear-gradient(180deg, #1a202c, #10141a); 
         padding: 35px 40px;
         border-radius: 20px;
-        /* Accent border and stronger shadows */
-        box-shadow: 0 15px 40px rgba(0,0,0,0.8), 0 0 0 1px rgba(0, 102, 204, 0.15); 
+        /* Brighter accent border and stronger shadows */
+        box-shadow: 0 15px 40px rgba(0,0,0,0.8), 0 0 0 1px rgba(0, 153, 255, 0.2); 
         position: relative;
         z-index: 10;
     }
@@ -62,21 +62,24 @@
         margin-bottom: 20px;
         font-weight: 900;
         color: #e6e6e6; /* Bright White */
-        /* Red accent shadow, a College Board color */
-        text-shadow: 0 0 15px rgba(204, 0, 0, 0.6); 
+        /* RAINBOW EFFECT: Stacked shadows to mimic a gradient/rainbow glow */
+        text-shadow: 
+            0 0 10px rgba(255, 0, 0, 0.6),    /* Red */
+            0 0 15px rgba(255, 165, 0, 0.6),  /* Orange */
+            0 0 20px rgba(0, 255, 255, 0.6),  /* Cyan/Aqua */
+            0 0 25px rgba(128, 0, 128, 0.6);  /* Purple */
     }
 
     p {
         font-size: 19px;
         line-height: 1.7;
         margin-bottom: 28px;
-        color: #c4c4c4;
+        color: #c4c4c4; /* Kept */
         text-align: left;
     }
 
-    /* Button - Uses a prominent gradient */
+    /* Button (Kept) */
     .join-btn {
-        /* Gradient from Discord Blue to a slightly lighter blue */
         background: linear-gradient(45deg, #4c7bff, #5a85ff); 
         color: white;
         font-size: 24px;
@@ -86,7 +89,6 @@
         cursor: pointer;
         transition: 0.3s ease-in-out;
         font-weight: bold;
-        /* Strong blue button shadow */
         box-shadow: 0 8px 25px rgba(76, 123, 255, 0.5); 
         text-decoration: none;
         display: inline-block;
@@ -94,15 +96,13 @@
 
     .join-btn:hover {
         transform: translateY(-5px) scale(1.04);
-        /* Slight color shift on hover */
         background: linear-gradient(45deg, #5a85ff, #6f95ff); 
         box-shadow: 0 12px 30px rgba(76, 123, 255, 0.8);
     }
     
-    /* Center text utility for the detailed list */
     .text-content {
         text-align: left;
-        display: block; /* Use block to occupy full width */
+        display: block; 
         margin-top: 10px;
     }
     
