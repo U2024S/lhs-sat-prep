@@ -11,11 +11,12 @@
         font-family: Arial, Helvetica, sans-serif;
         background: #0f121a; /* Dark Navy Background */
         color: white;
-        text-align: center; 
+        text-align: center; /* Center everything unless specified */
     }
 
     /* HEADER - College Board Blue Gradient */
     header {
+        /* College Board Blue Gradient */
         background: linear-gradient(135deg, #004c99, #0066cc); 
         padding: 50px 0;
         text-align: center;
@@ -28,10 +29,10 @@
         font-weight: 800;
         letter-spacing: 1px;
         color: white;
-        /* NEW: Custom shadow to mimic a blue-to-purple gradient glow */
+        /* UPDATED: Blue/Cyan Gradient Glow (no red) */
         text-shadow: 
-            0 0 10px rgba(0, 102, 204, 0.8), /* Blue glow */
-            0 0 20px rgba(138, 43, 226, 0.5); /* Purple glow */
+            0 0 10px rgba(0, 204, 255, 0.8), /* Bright Cyan/Aqua glow */
+            0 0 20px rgba(0, 102, 255, 0.5); /* Fading Blue glow */
     }
 
     .container {
@@ -42,6 +43,7 @@
 
     /* CARD - Dark gradient with a blue accent border/shadow */
     .card {
+        /* Darker Navy to Black Gradient for depth */
         background: linear-gradient(180deg, #1a202c, #10141a); 
         border-radius: 16px;
         padding: 40px 30px;
@@ -51,13 +53,13 @@
 
     /* IMAGE STYLING - MAKES IT A SQUARE CROP */
     .square-img {
-        width: 180px;           
-        height: 180px;          
-        object-fit: cover;      
+        width: 180px;           /* Fixed Width */
+        height: 180px;          /* Fixed Height (Square) */
+        object-fit: cover;      /* Crops the long image to fit the square */
         border-radius: 12px;    
-        border: 4px solid #2a3447; 
+        border: 4px solid #2a3447; /* Border matching the card background */
         margin-bottom: 25px;
-        box-shadow: 0 0 30px rgba(0, 102, 204, 0.6); /* Blue glow */
+        box-shadow: 0 0 30px rgba(0, 102, 204, 0.6); /* Flashy blue glow */
         transition: transform 0.3s ease;
     }
     .square-img:hover {
@@ -67,17 +69,18 @@
     .card p {
         font-size: 18px;
         line-height: 1.6;
-        text-align: left; 
+        text-align: left; /* Keep text alignment readable */
         color: #c4c4c4;
     }
     
+    /* Ensures the list block is left-aligned within the centered card */
     .text-content-wrapper {
         text-align: left;
         display: inline-block;
         max-width: 100%;
     }
 
-    /* Button - Discord Blue Gradient */
+    /* Button - Uses a prominent gradient and hover effect */
     .join-btn {
         display: block;
         width: 100%;
@@ -88,6 +91,7 @@
         font-size: 20px;
         font-weight: 700;
         text-decoration: none;
+        /* Discord Blue Gradient */
         background: linear-gradient(45deg, #5865F2, #7289DA); 
         color: white;
         transition: 0.3s ease;
@@ -142,7 +146,7 @@
             🚀 Join the Discord Server
         </a>
 
-    </div>
+        </div>
 </div>
 
 <footer>
