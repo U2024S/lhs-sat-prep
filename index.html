@@ -40,14 +40,14 @@
         object-fit: cover; 
         object-position: center; 
         filter: brightness(0.9);
-        /* NEW: Zoom in slightly to crop 1-2 pixels off the edge */
+        /* Zoom in slightly to crop 1-2 pixels off the edge */
         transform: scale(1.01); 
     }
 
     /* CARD - Now using a subtle vertical gradient */
     .card {
         max-width: 700px;
-        /* Reverted margin to overlap the image */
+        /* Margin to overlap the image */
         margin: -60px auto 50px auto; 
         /* Darker Navy to Black Gradient for depth */
         background: linear-gradient(180deg, #1a202c, #10141a); 
@@ -59,34 +59,21 @@
         z-index: 10;
     }
 
-    /* H1 TITLE WITH TRUE RAINBOW EFFECT - HIGHLIGHT LESS BIG */
+    /* H1 TITLE WITH LAYERED BLUE SHADOW */
     h1 {
         font-size: 50px;
         margin-top: 0;
         margin-bottom: 20px;
         font-weight: 900;
         
-        /* 1. Define the true rainbow gradient background (Softened colors from last step) */
-        background: linear-gradient(90deg, 
-            #ff5555 0%,     
-            #ffb857 15%,    
-            #ffff77 30%,    
-            #55ff55 45%,    
-            #5555ff 60%,    
-            #804d9e 75%,    
-            #ff88ff 100%    
-        );
+        /* REVERTED: Standard White Text Color */
+        color: #e6e6e6;
         
-        /* 2. Clip the background to the text shape */
-        -webkit-background-clip: text;
-        background-clip: text;
-
-        /* 3. Make the text transparent */
-        color: transparent; 
-
-        /* 4. Sublte blue glow - MADE SMALLER AND SOFTER */
+        /* NEW: Layered Blue Shadow for changing tone (dark blue to light cyan) */
         text-shadow: 
-            0 0 3px rgba(0, 153, 255, 0.15); /* Reduced blur radius and opacity */
+            0 0 5px rgba(0, 100, 200, 0.9),  /* Darker Blue Core */
+            0 0 10px rgba(0, 153, 255, 0.6), /* Medium Blue Glow */
+            0 0 20px rgba(0, 204, 255, 0.3); /* Soft Cyan/Aqua Bloom */
     }
 
     p {
