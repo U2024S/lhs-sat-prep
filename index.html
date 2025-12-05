@@ -9,80 +9,109 @@
     body {
         margin: 0;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        background: #0d0d0d; /* Dark background */
-        color: white;
+        background: #0f121a; /* Dark Navy Background */
+        color: #ffffff;
         text-align: center;
     }
 
     /* CONTAINER FOR IMAGE TO ENSURE SQUARE SHAPE AND CROP */
     .image-container {
         width: 100%;
-        max-width: 400px; /* Adjust size of the square logo */
+        max-width: 400px;
         height: 400px;
         margin: 40px auto 0 auto;
-        overflow: hidden; /* Crucial for hiding parts of the image that fall outside the square */
-        border-radius: 20px;
-        box-shadow: 0 0 40px rgba(76, 123, 255, 0.4); /* Flashy glow */
+        overflow: hidden;
+        border-radius: 25px;
+        /* Bright blue shadow for a dynamic look */
+        box-shadow: 0 0 50px rgba(0, 102, 204, 0.8), 0 0 10px rgba(255, 255, 255, 0.2); 
         position: relative;
-        transform: scale(0.95); /* Slightly pull away from edges */
+        transform: scale(0.95);
+        transition: transform 0.3s ease;
+    }
+    
+    .image-container:hover {
+        transform: scale(1.0);
     }
 
     /* THE IMAGE ITSELF */
     .image-container img {
         width: 100%;
         height: 100%;
-        object-fit: cover; /* Forces the image to fill the square space, cropping excess */
-        object-position: center; /* Ensures the middle of the image is used */
-        filter: brightness(0.8);
+        object-fit: cover; 
+        object-position: center; 
+        filter: brightness(0.9);
     }
 
-    /* CARD - Floating effect, slightly offset from the top */
+    /* CARD - Now using a subtle vertical gradient */
     .card {
         max-width: 700px;
-        margin: -60px auto 50px auto; /* Pulls the card up to overlap the image */
-        background: #1a1a1a;
+        margin: -60px auto 50px auto; 
+        /* Darker Navy to Black Gradient for depth */
+        background: linear-gradient(180deg, #1a202c, #10141a); 
         padding: 35px 40px;
         border-radius: 20px;
-        box-shadow: 0 15px 40px rgba(0,0,0,0.6), 0 0 5px rgba(255,255,255,0.05); /* Deep shadow + subtle border light */
-        border: 1px solid #2a2a2a;
+        /* Accent border and stronger shadows */
+        box-shadow: 0 15px 40px rgba(0,0,0,0.8), 0 0 0 1px rgba(0, 102, 204, 0.15); 
         position: relative;
         z-index: 10;
     }
 
     h1 {
-        font-size: 48px;
+        font-size: 50px;
         margin-top: 0;
         margin-bottom: 20px;
         font-weight: 900;
-        color: #4c7bff; /* Blue text to match button/glow */
-        text-shadow: 0 0 10px rgba(76, 123, 255, 0.3); /* Title glow */
+        color: #e6e6e6; /* Bright White */
+        /* Red accent shadow, a College Board color */
+        text-shadow: 0 0 15px rgba(204, 0, 0, 0.6); 
     }
 
     p {
         font-size: 19px;
         line-height: 1.7;
         margin-bottom: 28px;
-        color: #cccccc;
+        color: #c4c4c4;
+        text-align: left;
     }
 
+    /* Button - Uses a prominent gradient */
     .join-btn {
-        background: #4c7bff;
+        /* Gradient from Discord Blue to a slightly lighter blue */
+        background: linear-gradient(45deg, #4c7bff, #5a85ff); 
         color: white;
         font-size: 24px;
         padding: 16px 36px;
         border-radius: 12px;
         border: none;
         cursor: pointer;
-        transition: 0.2s ease-in-out;
+        transition: 0.3s ease-in-out;
         font-weight: bold;
-        box-shadow: 0 5px 20px rgba(76, 123, 255, 0.4); /* Flashy button glow */
+        /* Strong blue button shadow */
+        box-shadow: 0 8px 25px rgba(76, 123, 255, 0.5); 
+        text-decoration: none;
+        display: inline-block;
     }
 
     .join-btn:hover {
-        transform: translateY(-3px) scale(1.03);
-        background: #5a85ff;
-        box-shadow: 0 8px 25px rgba(76, 123, 255, 0.6);
+        transform: translateY(-5px) scale(1.04);
+        /* Slight color shift on hover */
+        background: linear-gradient(45deg, #5a85ff, #6f95ff); 
+        box-shadow: 0 12px 30px rgba(76, 123, 255, 0.8);
     }
+    
+    /* Center text utility for the detailed list */
+    .text-content {
+        text-align: left;
+        display: block; /* Use block to occupy full width */
+        margin-top: 10px;
+    }
+    
+    .text-content p {
+        margin-top: 0;
+        margin-bottom: 12px;
+        padding-left: 5px;
+    }
+
 </style>
 </head>
 <body>
@@ -93,15 +122,28 @@
 
 <div class="card">
     <h1>LHS SAT PREP</h1>
-    <p>
-        Get free resources, Desmos tricks for an 800 in Math, question banks, vocab tools,
-        test predictions, and everything you need to study smarter and conquer the SAT!
-    </p>
+    
+    <div class="text-content">
+        <p>
+            Join the #1 SAT prep community at Longmeadow High School!
+            We share free study tools, question banks, vocab resources,
+            predictions, and tips to help students study smarter and get higher scores.
+        </p>
 
-    <button class="join-btn" onclick="window.location.href='https://discord.gg/DcXwBmRUgv'">
-        Join the Discord
-    </button>
-</div>
+        <p>
+            💬 <strong>Get free resources</strong><br>
+            📘 <strong>Desmos tricks for an 800 in Math</strong><br>
+            🧠 <strong>Question banks + vocab tools</strong><br>
+            📊 <strong>Test predictions</strong><br>
+            🎯 <strong>Everything you need to conquer the SAT!</strong>
+        </p>
+    </div>
+
+    <a class="join-btn" href="https://discord.gg/DcXwBmRUgv" target="_blank">
+        🚀 Join the Discord Server
+    </a>
+    
+    </div>
 
 </body>
 </html>
