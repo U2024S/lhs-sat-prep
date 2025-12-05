@@ -51,19 +51,38 @@
         z-index: 10;
     }
 
-    /* CLEAN & CRISP H1 TITLE */
+    /* CLEAN & CRISP H1 TITLE WITH SHINE */
     h1 {
         font-size: 56px;
         margin-top: 0;
         margin-bottom: 25px;
         font-weight: 900;
-        background: linear-gradient(90deg, #4c7bff 0%, #2e5cb8 100%);
+        background: linear-gradient(90deg, #4c7bff, #2e5cb8);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
         color: transparent;
-        /* subtle blue glow */
-        text-shadow: 0 0 6px rgba(76, 123, 255, 0.5);
+        text-shadow: 0 0 6px rgba(76, 123, 255, 0.5); /* subtle glow */
+        position: relative;
+        overflow: hidden;
+    }
+
+    /* Shine effect using pseudo-element */
+    h1::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -75%;
+        width: 50%;
+        height: 100%;
+        background: linear-gradient(120deg, rgba(255,255,255,0.2), rgba(255,255,255,0.6), rgba(255,255,255,0.2));
+        transform: skewX(-25deg);
+        animation: shine 2.5s infinite;
+    }
+
+    @keyframes shine {
+        0% { left: -75%; }
+        100% { left: 125%; }
     }
 
     p {
@@ -122,7 +141,7 @@
 
     <div class="text-content">
         <p>
-            Join the SAT prep community at Longmeadow High School!
+            Join the #1 SAT prep community at Longmeadow High School!
             We share free study tools, question banks, vocab resources,
             predictions, and tips to help students study smarter and get higher scores.
         </p>
