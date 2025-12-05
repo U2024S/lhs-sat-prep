@@ -22,8 +22,8 @@
         margin: 40px auto 0 auto;
         overflow: hidden;
         border-radius: 25px;
-        /* Bright blue shadow for a dynamic look */
-        box-shadow: 0 0 50px rgba(0, 102, 204, 0.8), 0 0 10px rgba(255, 255, 255, 0.2); 
+        /* Flashier Blue Shadow */
+        box-shadow: 0 0 60px rgba(0, 153, 255, 0.9), 0 0 20px rgba(255, 255, 255, 0.3); 
         position: relative;
         transform: scale(0.95);
         transition: transform 0.3s ease;
@@ -50,41 +50,22 @@
         background: linear-gradient(180deg, #1a202c, #10141a); 
         padding: 35px 40px;
         border-radius: 20px;
-        /* Accent border and stronger shadows */
-        box-shadow: 0 15px 40px rgba(0,0,0,0.8), 0 0 0 1px rgba(0, 102, 204, 0.15); 
+        /* Brighter accent border and stronger shadows */
+        box-shadow: 0 15px 40px rgba(0,0,0,0.8), 0 0 0 1px rgba(0, 153, 255, 0.2); 
         position: relative;
         z-index: 10;
     }
 
-    /* H1 TITLE WITH TRUE RAINBOW EFFECT */
     h1 {
         font-size: 50px;
         margin-top: 0;
         margin-bottom: 20px;
         font-weight: 900;
-        
-        /* 1. Define the rainbow gradient background */
-        background: linear-gradient(90deg, 
-            #ff0000, /* Red */
-            #ffa500, /* Orange */
-            #ffff00, /* Yellow */
-            #00ff00, /* Green */
-            #0000ff, /* Blue */
-            #4b0082, /* Indigo */
-            #ee82ee  /* Violet */
-        );
-        
-        /* 2. Clip the background to the text shape */
-        -webkit-background-clip: text;
-        background-clip: text;
-
-        /* 3. Make the text transparent so the background shows through */
-        color: transparent; 
-
-        /* 4. Keep a subtle glow shadow for contrast/pop */
+        color: #e6e6e6; /* Bright White */
+        /* UPDATED: Layered Blue/Cyan Glow (replaces red shadow) */
         text-shadow: 
-            0 0 8px rgba(0, 153, 255, 0.4), /* Light Blue Glow */
-            0 0 15px rgba(0, 204, 255, 0.2); /* Cyan Bloom */
+            0 0 12px rgba(0, 153, 255, 0.9),  /* Primary Bright Blue Glow */
+            0 0 25px rgba(0, 204, 255, 0.6);  /* Secondary Cyan Bloom */
     }
 
     p {
