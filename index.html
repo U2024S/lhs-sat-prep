@@ -51,38 +51,25 @@
         z-index: 10;
     }
 
-    /* CLEAN & CRISP H1 TITLE WITH SHINE */
-    h1 {
+    /* CRISP TITLE WITH SUBTLE SHINE */
+    .title {
         font-size: 56px;
-        margin-top: 0;
-        margin-bottom: 25px;
         font-weight: 900;
-        background: linear-gradient(90deg, #4c7bff, #2e5cb8);
+        background: linear-gradient(90deg, #4c7bff 0%, #2e5cb8 100%);
+        background-clip: text;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
-        background-clip: text;
         color: transparent;
-        text-shadow: 0 0 6px rgba(76, 123, 255, 0.5); /* subtle glow */
-        position: relative;
-        overflow: hidden;
-    }
-
-    /* Shine effect using pseudo-element */
-    h1::after {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: -75%;
-        width: 50%;
-        height: 100%;
-        background: linear-gradient(120deg, rgba(255,255,255,0.2), rgba(255,255,255,0.6), rgba(255,255,255,0.2));
-        transform: skewX(-25deg);
-        animation: shine 2.5s infinite;
+        text-shadow: 0 0 6px rgba(76, 123, 255, 0.4);
+        background-size: 200% auto;
+        animation: shine 3s linear infinite;
+        margin-top: 0;
+        margin-bottom: 25px;
     }
 
     @keyframes shine {
-        0% { left: -75%; }
-        100% { left: 125%; }
+        0% { background-position: -100% 0; }
+        100% { background-position: 100% 0; }
     }
 
     p {
@@ -109,10 +96,11 @@
         display: inline-block;
     }
 
+    /* Slightly smaller hover effect */
     .join-btn:hover {
-        transform: translateY(-6px) scale(1.05);
+        transform: translateY(-3px) scale(1.02);
         background: linear-gradient(45deg, #5a85ff, #6f95ff);
-        box-shadow: 0 14px 35px rgba(76, 123, 255, 0.8);
+        box-shadow: 0 12px 25px rgba(76, 123, 255, 0.6);
     }
 
     /* TEXT CONTENT */
@@ -137,7 +125,7 @@
 </div>
 
 <div class="card">
-    <h1>LHS SAT PREP</h1>
+    <h1 class="title">LHS SAT PREP</h1>
 
     <div class="text-content">
         <p>
