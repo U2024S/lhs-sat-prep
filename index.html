@@ -9,68 +9,90 @@
     body {
         margin: 0;
         font-family: Arial, sans-serif;
-        background: #111;
+        background: #0c0c0c;
         color: white;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
         text-align: center;
     }
 
+    /* HERO SECTION WITH CROPPED IMAGE */
     .hero {
         width: 100%;
-        max-width: 900px;
-        height: 380px;
-        overflow: hidden;
-        border-radius: 12px;
-        margin-top: 30px;
+        height: 420px;
+        background-image: url("sat long (1).jpg");
+        background-size: cover;          /* crop to fill */
+        background-position: center;     /* middle square */
+        filter: brightness(0.85);
+        position: relative;
     }
 
-    .hero img {
+    /* nice fade at bottom */
+    .hero:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
         width: 100%;
-        height: 100%;
-        object-fit: cover;        /* always crop to fill */
-        object-position: center;  /* middle area */
+        height: 140px;
+        background: linear-gradient(transparent, #0c0c0c);
+    }
+
+    /* CARD */
+    .card {
+        max-width: 700px;
+        margin: -60px auto 0 auto;
+        background: #151515;
+        padding: 35px 40px;
+        border-radius: 16px;
+        box-shadow: 0 12px 30px rgba(0,0,0,0.4);
     }
 
     h1 {
-        margin: 25px 0 10px 0;
-        font-size: 40px;
+        font-size: 42px;
+        margin-top: 0;
+        margin-bottom: 14px;
     }
 
     p {
-        max-width: 650px;
-        margin-bottom: 30px;
+        font-size: 19px;
         line-height: 1.6;
-        font-size: 18px;
+        margin-bottom: 28px;
     }
 
     button {
-        padding: 15px 30px;
-        font-size: 20px;
+        background: #4c7bff;
+        color: white;
+        font-size: 22px;
+        padding: 14px 32px;
         border-radius: 8px;
         border: none;
         cursor: pointer;
+        transition: 0.15s;
     }
-</style>
 
+    button:hover {
+        transform: scale(1.06);
+        background: #5a85ff;
+    }
+
+</style>
 </head>
 <body>
 
-<div class="hero">
-    <img src="sat long (1).jpg" alt="SAT Banner">
+<!-- HERO IMAGE -->
+<div class="hero"></div>
+
+<!-- CARD -->
+<div class="card">
+    <h1>LHS SAT PREP</h1>
+    <p>
+        Get free resources, Desmos tricks for an 800 in Math, question banks, vocab tools,
+        test predictions, and everything you need to study smarter and conquer the SAT!
+    </p>
+
+    <button onclick="window.location.href='https://discord.gg/DcXwBmRUgv'">
+        Join the Discord
+    </button>
 </div>
-
-<h1>LHS SAT PREP</h1>
-
-<p>
-Get free resources, Desmos tricks for an 800 in Math, question banks, vocab tools,
-test predictions, and everything you need to study smarter and conquer the SAT!
-</p>
-
-<button onclick="window.location.href='https://discord.gg/DcXwBmRUgv'">
-    Join the Discord
-</button>
 
 </body>
 </html>
