@@ -12,17 +12,46 @@
         background: #0f121a; /* Dark Navy Background */
         color: #ffffff;
         text-align: center;
-        /* Ensure card doesn't look empty without image container margin */
-        padding-top: 50px; 
     }
 
-    /* CARD - Now slightly higher due to no image overlap */
+    /* CONTAINER FOR IMAGE TO ENSURE SQUARE SHAPE AND CROP */
+    .image-container {
+        width: 100%;
+        max-width: 400px;
+        height: 400px;
+        margin: 40px auto 0 auto;
+        overflow: hidden;
+        border-radius: 25px;
+        /* Bright blue shadow for a dynamic look */
+        box-shadow: 0 0 50px rgba(0, 102, 204, 0.8), 0 0 10px rgba(255, 255, 255, 0.2); 
+        position: relative;
+        transform: scale(0.95);
+        transition: transform 0.3s ease;
+    }
+    
+    .image-container:hover {
+        transform: scale(1.0);
+    }
+
+    /* THE IMAGE ITSELF - ADJUSTED FOR SUBTLE ZOOM/CROP */
+    .image-container img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; 
+        object-position: center; 
+        filter: brightness(0.9);
+        
+        /* NEW: Zoom in slightly to crop 1-2 pixels off the edge */
+        transform: scale(1.01); 
+    }
+
+    /* CARD */
     .card {
         max-width: 700px;
-        margin: 0 auto 50px auto; 
+        margin: -60px auto 50px auto; 
         /* Darker Navy to Black Gradient for depth */
         background: linear-gradient(180deg, #1a202c, #10141a); 
-        padding: 50px 40px; /* Increased padding since the image is gone */
+        padding: 35px 40px;
         border-radius: 20px;
         /* Accent border and stronger shadows */
         box-shadow: 0 15px 40px rgba(0,0,0,0.8), 0 0 0 1px rgba(0, 102, 204, 0.15); 
@@ -30,34 +59,34 @@
         z-index: 10;
     }
 
-    /* H1 TITLE WITH TRUE RAINBOW EFFECT */
+    /* H1 TITLE WITH SOFTER RAINBOW EFFECT */
     h1 {
         font-size: 50px;
         margin-top: 0;
-        margin-bottom: 25px; /* Added spacing below the title */
+        margin-bottom: 20px;
         font-weight: 900;
         
-        /* 1. Define the true rainbow gradient background */
+        /* 1. Define the true rainbow gradient background with slightly softer colors */
         background: linear-gradient(90deg, 
-            #ff0000 0%,     /* Red */
-            #ff7f00 15%,    /* Orange */
-            #ffff00 30%,    /* Yellow */
-            #00ff00 45%,    /* Green */
-            #0000ff 60%,    /* Blue */
-            #4b0082 75%,    /* Indigo */
-            #ee82ee 100%    /* Violet */
+            #ff5555 0%,     /* Softer Red */
+            #ffb857 15%,    /* Softer Orange */
+            #ffff77 30%,    /* Softer Yellow */
+            #55ff55 45%,    /* Softer Green */
+            #5555ff 60%,    /* Softer Blue */
+            #804d9e 75%,    /* Softer Indigo */
+            #ff88ff 100%    /* Softer Violet */
         );
         
         /* 2. Clip the background to the text shape */
         -webkit-background-clip: text;
         background-clip: text;
 
-        /* 3. Make the text transparent so the background shows through */
+        /* 3. Make the text transparent */
         color: transparent; 
 
-        /* 4. Sublte blue glow for contrast against the dark card */
+        /* 4. Reduced glow shadow */
         text-shadow: 
-            0 0 10px rgba(0, 153, 255, 0.3);
+            0 0 5px rgba(0, 153, 255, 0.2); 
     }
 
     p {
@@ -105,9 +134,14 @@
         margin-bottom: 12px;
         padding-left: 5px;
     }
+
 </style>
 </head>
 <body>
+
+<div class="image-container">
+    <img src="sat long (1).jpg" alt="LHS SAT Prep Logo">
+</div>
 
 <div class="card">
     <h1>LHS SAT PREP</h1>
@@ -132,7 +166,7 @@
         🚀 Join the Discord Server
     </a>
     
-</div>
+    </div>
 
 </body>
 </html>
