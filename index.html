@@ -1,142 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>LHS SAT Prep</title>
 
 <style>
     body {
         margin: 0;
-        font-family: Arial, Helvetica, sans-serif;
-        background: #0d0d0d;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: #0d0d0d; /* Dark background */
         color: white;
+        text-align: center;
     }
 
-    /* THE OLD HEADER STYLE */
-    header {
-        background: linear-gradient(135deg, #977f50, #c0a47b);
-        padding: 50px 0;
-        text-align: center;
+    /* CONTAINER FOR IMAGE TO ENSURE SQUARE SHAPE AND CROP */
+    .image-container {
+        width: 100%;
+        max-width: 400px; /* Adjust size of the square logo */
+        height: 400px;
+        margin: 40px auto 0 auto;
+        overflow: hidden; /* Crucial for hiding parts of the image that fall outside the square */
+        border-radius: 20px;
+        box-shadow: 0 0 40px rgba(76, 123, 255, 0.4); /* Flashy glow */
+        position: relative;
+        transform: scale(0.95); /* Slightly pull away from edges */
+    }
+
+    /* THE IMAGE ITSELF */
+    .image-container img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Forces the image to fill the square space, cropping excess */
+        object-position: center; /* Ensures the middle of the image is used */
+        filter: brightness(0.8);
+    }
+
+    /* CARD - Floating effect, slightly offset from the top */
+    .card {
+        max-width: 700px;
+        margin: -60px auto 50px auto; /* Pulls the card up to overlap the image */
+        background: #1a1a1a;
+        padding: 35px 40px;
+        border-radius: 20px;
+        box-shadow: 0 15px 40px rgba(0,0,0,0.6), 0 0 5px rgba(255,255,255,0.05); /* Deep shadow + subtle border light */
+        border: 1px solid #2a2a2a;
+        position: relative;
+        z-index: 10;
     }
 
     h1 {
-        margin: 0;
-        font-size: 42px;
-        font-weight: 800;
-        letter-spacing: 1px;
-        text-shadow: 0 2px 4px rgba(0,0,0,0.2);
-    }
-
-    .container {
-        max-width: 900px;
-        margin: 50px auto;
-        padding: 20px;
-    }
-
-    .card {
-        background: #1a1a1a;
-        border-radius: 16px;
-        padding: 40px 30px; /* Increased top padding slightly */
-        box-shadow: 0 0 18px rgba(255,255,255,0.08);
-        text-align: center; /* Centers the image and text */
-    }
-
-    /* IMAGE STYLING - MAKES IT A SQUARE CROP */
-    .square-img {
-        width: 180px;           /* Fixed Width */
-        height: 180px;          /* Fixed Height (Same as width = Square) */
-        object-fit: cover;      /* This crops the long image to fit the square */
-        border-radius: 12px;    /* Slight rounded corners (change to 50% for circle) */
-        border: 4px solid #2a2a2a;
-        margin-bottom: 25px;
-        box-shadow: 0 8px 16px rgba(0,0,0,0.3);
-    }
-
-    .card p {
-        font-size: 18px;
-        line-height: 1.6;
-        text-align: left; /* Keep text readable */
+        font-size: 48px;
+        margin-top: 0;
         margin-bottom: 20px;
+        font-weight: 900;
+        color: #4c7bff; /* Blue text to match button/glow */
+        text-shadow: 0 0 10px rgba(76, 123, 255, 0.3); /* Title glow */
     }
-    
-    /* Utility to center the list text if you prefer, 
-       but left align usually reads better for lists */
-    .text-content {
-        text-align: left;
-        display: inline-block;
+
+    p {
+        font-size: 19px;
+        line-height: 1.7;
+        margin-bottom: 28px;
+        color: #cccccc;
     }
 
     .join-btn {
-        display: block;
-        width: 100%;
-        text-align: center;
-        margin: 30px 0;
-        padding: 18px 20px;
-        box-sizing: border-box; /* Ensures padding doesn't break width */
-        border-radius: 12px;
-        font-size: 20px;
-        font-weight: 700;
-        text-decoration: none;
-        background: #5865F2; /* Discord Color */
+        background: #4c7bff;
         color: white;
-        transition: 0.2s ease;
+        font-size: 24px;
+        padding: 16px 36px;
+        border-radius: 12px;
+        border: none;
+        cursor: pointer;
+        transition: 0.2s ease-in-out;
+        font-weight: bold;
+        box-shadow: 0 5px 20px rgba(76, 123, 255, 0.4); /* Flashy button glow */
     }
 
     .join-btn:hover {
-        background: #4854c5;
-        transform: translateY(-2px);
-    }
-
-    footer {
-        text-align: center;
-        padding: 30px;
-        opacity: 0.7;
-        font-size: 14px;
+        transform: translateY(-3px) scale(1.03);
+        background: #5a85ff;
+        box-shadow: 0 8px 25px rgba(76, 123, 255, 0.6);
     }
 </style>
 </head>
 <body>
 
-<header>
-    <h1>LHS SAT PREP</h1>
-</header>
-
-<div class="container">
-    <div class="card">
-        
-        <img src="sat long (1).jpg" alt="SAT Prep" class="square-img">
-
-        <div class="text-content">
-            <p>
-                Join the #1 SAT prep community at Longmeadow High School!
-                We share free study tools, question banks, vocab resources,
-                predictions, and tips to help students study smarter
-                and get higher scores.
-            </p>
-
-            <p>
-                💬 <strong>Get free resources</strong><br>
-                📘 <strong>Desmos tricks for an 800 in Math</strong><br>
-                🧠 <strong>Question banks + vocab tools</strong><br>
-                📊 <strong>Test predictions</strong><br>
-                🎯 <strong>Everything you need to conquer the SAT!</strong>
-            </p>
-        </div>
-
-        <a class="join-btn" href="https://discord.gg/DcXwBmRUgv" target="_blank">
-            🚀 Join the Discord Server
-        </a>
-
-        <p style="text-align:center; margin-top:10px; font-size: 14px; opacity: 0.6;">
-            Est. November 2025 • 27 Members
-        </p>
-    </div>
+<div class="image-container">
+    <img src="sat long (1).jpg" alt="LHS SAT Prep Logo">
 </div>
 
-<footer>
-    LHS SAT Prep • Made for students, by students.
-</footer>
+<div class="card">
+    <h1>LHS SAT PREP</h1>
+    <p>
+        Get free resources, Desmos tricks for an 800 in Math, question banks, vocab tools,
+        test predictions, and everything you need to study smarter and conquer the SAT!
+    </p>
+
+    <button class="join-btn" onclick="window.location.href='https://discord.gg/DcXwBmRUgv'">
+        Join the Discord
+    </button>
+</div>
 
 </body>
 </html>
