@@ -6,8 +6,10 @@
 <title>LHS SAT Prep</title>
 
 <style>
-    body {
+    html, body {
         margin: 0;
+        padding: 0;
+        overflow-x: hidden;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         background: #0f121a;
         color: #ffffff;
@@ -51,7 +53,7 @@
         z-index: 10;
     }
 
-    /* CRISP TITLE WITH SUBTLE SHINE */
+    /* CRISP TITLE WITH SMOOTH GLEAM */
     .title {
         font-size: 56px;
         font-weight: 900;
@@ -59,17 +61,38 @@
         background-clip: text;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
+        background-clip: text;
         color: transparent;
-        text-shadow: 0 0 6px rgba(76, 123, 255, 0.4);
-        background-size: 200% auto;
-        animation: shine 3s linear infinite;
+        text-shadow: 0 0 6px rgba(76, 123, 255, 0.4); /* subtle glow */
         margin-top: 0;
         margin-bottom: 25px;
+        position: relative;
+        overflow: hidden;
     }
 
-    @keyframes shine {
-        0% { background-position: -100% 0; }
-        100% { background-position: 100% 0; }
+    /* Smooth gleam overlay */
+    .title::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -150%;
+        width: 150%;
+        height: 100%;
+        background: linear-gradient(
+            120deg,
+            rgba(255,255,255,0) 0%,
+            rgba(255,255,255,0.2) 30%,
+            rgba(255,255,255,0.4) 50%,
+            rgba(255,255,255,0.2) 70%,
+            rgba(255,255,255,0) 100%
+        );
+        transform: skewX(-25deg);
+        animation: smoothGleam 3s linear infinite;
+    }
+
+    @keyframes smoothGleam {
+        0% { left: -150%; }
+        100% { left: 100%; }
     }
 
     p {
@@ -96,7 +119,6 @@
         display: inline-block;
     }
 
-    /* Slightly smaller hover effect */
     .join-btn:hover {
         transform: translateY(-3px) scale(1.02);
         background: linear-gradient(45deg, #5a85ff, #6f95ff);
