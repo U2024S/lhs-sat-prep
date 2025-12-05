@@ -19,95 +19,93 @@
         width: 100%;
         max-width: 400px;
         height: 400px;
-        margin: 40px auto 0 auto;
+        margin: -80px auto 0 auto; /* Overlaps card */
         overflow: hidden;
         border-radius: 25px;
-        box-shadow: 0 0 50px rgba(0, 102, 204, 0.8), 0 0 10px rgba(255, 255, 255, 0.2);
+        box-shadow: 0 15px 50px rgba(0, 102, 204, 0.6);
         position: relative;
-        transform: scale(0.95);
-        transition: transform 0.3s ease;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        z-index: 20;
     }
     
     .image-container:hover {
-        transform: scale(1.0);
+        transform: scale(1.02);
+        box-shadow: 0 20px 60px rgba(0, 102, 204, 0.8);
     }
 
-    /* THE IMAGE ITSELF - ADJUSTED FOR SUBTLE ZOOM/CROP */
     .image-container img {
         width: 100%;
         height: 100%;
         object-fit: cover; 
         object-position: center; 
-        filter: brightness(0.9);
-        transform: scale(1.01);
+        filter: brightness(0.95);
     }
 
     /* CARD */
     .card {
         max-width: 700px;
-        margin: -60px auto 50px auto; 
+        margin: 0 auto 50px auto; 
         background: linear-gradient(180deg, #1a202c, #10141a); 
-        padding: 35px 40px;
-        border-radius: 20px;
-        box-shadow: 0 15px 40px rgba(0,0,0,0.8), 0 0 0 1px rgba(0, 102, 204, 0.15); 
+        padding: 120px 40px 50px 40px; /* Top padding increased for image overlap */
+        border-radius: 25px;
+        box-shadow: 0 20px 50px rgba(0,0,0,0.8), 0 0 0 1px rgba(0, 102, 204, 0.15); 
         position: relative;
         z-index: 10;
     }
 
-    /* H1 TITLE WITH BLUE TONE GRADIENT EFFECT */
+    /* H1 TITLE WITH CRISP GRADIENT EFFECT */
     h1 {
-        font-size: 50px;
+        font-size: 56px;
         margin-top: 0;
-        margin-bottom: 20px;
+        margin-bottom: 25px;
         font-weight: 900;
         background: linear-gradient(90deg, 
             #4c7bff 0%, 
-            #2e5cb8 30%, 
-            #1a2a4b 60%, 
+            #2e5cb8 35%, 
+            #1a2a4b 65%, 
             #4c7bff 100%
         );
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
-        color: transparent;
-        text-shadow: 0 0 5px rgba(76, 123, 255, 0.5);
+        text-shadow: 0 0 4px rgba(76, 123, 255, 0.4); /* subtle glow, no blur */
     }
 
     p {
-        font-size: 19px;
+        font-size: 18px;
         line-height: 1.7;
-        margin-bottom: 28px;
+        margin-bottom: 25px;
         color: #c4c4c4;
         text-align: left;
     }
 
-    /* Button - Uses a prominent gradient */
+    /* Button */
     .join-btn {
         background: linear-gradient(45deg, #4c7bff, #5a85ff); 
         color: white;
         font-size: 24px;
         padding: 16px 36px;
-        border-radius: 12px;
+        border-radius: 14px;
         border: none;
         cursor: pointer;
-        transition: 0.3s ease-in-out;
+        transition: 0.3s ease-in-out, transform 0.3s ease;
         font-weight: bold;
-        box-shadow: 0 8px 25px rgba(76, 123, 255, 0.5); 
+        box-shadow: 0 10px 30px rgba(76, 123, 255, 0.5); 
         text-decoration: none;
         display: inline-block;
     }
 
     .join-btn:hover {
-        transform: translateY(-5px) scale(1.04);
+        transform: translateY(-6px) scale(1.05);
         background: linear-gradient(45deg, #5a85ff, #6f95ff); 
-        box-shadow: 0 12px 30px rgba(76, 123, 255, 0.8);
+        box-shadow: 0 14px 35px rgba(76, 123, 255, 0.8);
     }
     
-    /* Center text utility for the detailed list */
+    /* Text content */
     .text-content {
         text-align: left;
         display: block; 
-        margin-top: 10px;
+        margin-top: 15px;
     }
     
     .text-content p {
